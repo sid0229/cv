@@ -1,215 +1,160 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2021 Jitin Nair
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%	
-%
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-
-%----------------------------------------------------------------------------------------
-%	DOCUMENT DEFINITION
-%----------------------------------------------------------------------------------------
-
-% article class because we want to fully customize the page and not use a cv template
 \documentclass[a4paper,12pt]{article}
-
-%----------------------------------------------------------------------------------------
-%	FONT
-%----------------------------------------------------------------------------------------
-
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 \usepackage{url}
 \usepackage{parskip} 	
-
-%other packages for formatting
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
-
-%tabularx environment
 \usepackage{tabularx}
-
-%for lists within experience section
 \usepackage{enumitem}
-
-% centered version of 'X' col. type
 \newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
 \usepackage{supertabular}
-\usepackage{tabularx}
 \newlength{\fullcollw}
 \setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
 \usepackage{titlesec}				
 \usepackage{multicol}
 \usepackage{multirow}
-
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
-
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
-
-%for social icons
 \usepackage{fontawesome5}
 
-%debug page outer frames
-%\usepackage{showframe}
-
-
-% job listing environments
-\newenvironment{jobshort}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    }
-    {
-    }
-
+%----------------------------------------------------------------------------------------
+% JOB ENVIRONMENTS
+%----------------------------------------------------------------------------------------
 \newenvironment{joblong}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-    }
-    {
-    \end{itemize}
-    \end{minipage}    
-    }
-
-
+{
+\begin{tabularx}{\linewidth}{@{}l X r@{}}
+\textbf{#1} & \hfill & #2 \\[3.75pt]
+\end{tabularx}
+\begin{minipage}[t]{\linewidth}
+\begin{itemize}[nosep,after=\strut,leftmargin=1em,itemsep=3pt,label=--]
+}
+{
+\end{itemize}
+\end{minipage}
+}
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
 %----------------------------------------------------------------------------------------
 \begin{document}
-
-% non-numbered pages
-\pagestyle{empty} 
+\pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
 %	TITLE
 %----------------------------------------------------------------------------------------
-
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
-
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your Name} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\Huge{Siddhant Gahlot} \\[7.5pt]
+\href{https://github.com/sid0229}{\raisebox{-0.05\height}\faGithub\ sid0229} \ $|$ \
+\href{https://www.linkedin.com/in/siddhant-gahlot/}{\raisebox{-0.05\height}\faLinkedin\ siddhant-gahlot} \ $|$ \
+\href{mailto:23f2000839@ds.study.iitm.ac.in}{\raisebox{-0.05\height}\faEnvelope\ 23f2000839@ds.study.iitm.ac.in} \ $|$ \
+\href{mailto:gahlotsiddhant@gmail.com}{\raisebox{-0.05\height}\faEnvelope\ gahlotsiddhant@gmail.com} \ $|$ \
+\href{tel:+919560358447}{\raisebox{-0.05\height}\faMobile\ +91 95603 58447}
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
+%	SUMMARY
 %----------------------------------------------------------------------------------------
-
-%Interests/ Keywords/ Summary
 \section{Summary}
-This CV can also be automatically compiled and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
+Driven and analytical undergraduate pursuing dual degrees in Artificial Intelligence \& Machine Learning and Data Science. Experienced in data cleaning, visualization, machine learning, and generative AI systems. Proven ability to convert raw data into actionable insights while combining strong technical execution with business understanding through real-world projects.
 
-%Experience
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
 \section{Work Experience}
 
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
-
-
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
+\begin{joblong}{AI Intern — Prodigal AI (Remote)}{Jul 2025 -- Aug 2025}
+\item Worked on Python-based machine learning workflows and AI-driven systems.
+\item Applied data preprocessing, feature engineering, and model evaluation techniques.
+\item Contributed to real-world AI use cases with a focus on scalability and performance.
 \end{joblong}
-  
-%Projects
+
+\begin{joblong}{Generative AI Engineer — Sansoftech Services Pvt. Ltd. (Remote)}{Jun 2025 -- Jul 2025}
+\item Developed and integrated generative AI components using prompt engineering techniques.
+\item Worked on LLM-powered applications for intelligent automation and user interaction.
+\item Collaborated remotely with cross-functional teams to deliver production-ready AI features.
+\end{joblong}
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
 \section{Projects}
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{Citizen Care Pharmacy — Data Analytics for B2C Optimization} & \\[3pt]
+\multicolumn{2}{@{}X@{}}{
+Analyzed end-to-end pharmacy business data (Greater Noida) to uncover customer trends and operational inefficiencies. Designed analytical dashboards and proposed improvements in inventory planning, pricing strategy, and delivery optimization.
+} \\
+\end{tabularx}
+
+\vspace{6pt}
+
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{Finsights — Personal Finance Tracker App} & \\[3pt]
+\multicolumn{2}{@{}X@{}}{
+Built a full-stack personal finance tracker using HTML, CSS, Python, Node.js, and MongoDB. Developed during the International Upstage API Hackathon to visualize expenses, budgets, and financial insights.
+} \\
+\end{tabularx}
+
+\vspace{6pt}
+
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{DeVahan — NFT-Based Vehicle Ownership Platform (Winner — Zenith 4.0)} & \\[3pt]
+\multicolumn{2}{@{}X@{}}{
+Developed a Web3 platform enabling RTOs to mint vehicle NFTs and users to securely transfer ownership. Implemented MetaMask authentication, IPFS metadata storage, role-based dashboards, and multilingual user interfaces.
+} \\
+\end{tabularx}
+
+\vspace{6pt}
+
+\begin{tabularx}{\linewidth}{@{}l r@{}}
+\textbf{PramaanNFT — Blockchain-Based Property Validation System} & \\[3pt]
+\multicolumn{2}{@{}X@{}}{
+Designed a smart contract-backed system for minting property NFTs to enable secure and transparent ownership transfer. Integrated PIN-based authentication, dealer/user roles, and AI chatbot support for real-time query handling.
+} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
-
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
-
-2022 & Class 12th Some Board \hfill  (Grades) \\
-
-2021 & Class 10th Some Board \hfill  (Grades) \\
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+2023 -- 2027 & B.Tech in Artificial Intelligence \& Machine Learning, \textbf{University School of Automation and Robotics, GGSIPU (EDC)} \hfill (CGPA: 8.93) \\
+2023 -- 2027 & BS in Data Science, \textbf{Indian Institute of Technology, Madras} \hfill (CGPA: 8.21) \\
+2022 & Class XII (CBSE, PCM + Economics), DPS Greater Noida \hfill (97.2\%, Top 10 Rank, Medalist) \\
+2020 & Class X (ICSE), St. Joseph School, Greater Noida \hfill (95.6\%, Top 5 Rank, Medalist) \\
 \end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+Data Analysis \& Visualization & Data Cleaning, Exploratory Data Analysis (EDA), Statistical Modeling, Dashboarding \\
+Technical Skills & Python, SQL, Java, Scikit-learn, Pandas, NumPy, Matplotlib, TensorFlow, PyTorch \\
+Web \& Cloud Tools & HTML, CSS, React.js, JavaScript, Google Cloud Platform, Microsoft Azure \\
+Other & Git, API Integration, Communication, Leadership, Project Management \\
+Languages & English (Fluent), Hindi (Fluent) \\
 \end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL INFORMATION
+%----------------------------------------------------------------------------------------
+\section{Additional Information}
+\begin{itemize}[nosep,leftmargin=1em,label=--]
+\item Cleared JEE Mains (2023) and CUET (2022)
+\item Winner of multiple competitive gaming tournaments
+\item Cinematographer for ``Fireworks by Lights Out'' on YouTube
+\item Designed and deployed a professional website for a law firm: \href{https://krjlegaloutsource.com}{krjlegaloutsource.com}
+\item Certifications: Google Cloud Certified, Microsoft Azure Fundamentals, Machine Learning with Python (Coursera)
+\end{itemize}
 
 \vfill
 \center{\footnotesize Last updated: \today}
